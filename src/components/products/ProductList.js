@@ -4,7 +4,7 @@ import { Badge, Table, Button } from "reactstrap";
 import { bindActionCreators } from "redux";
 import * as productActions from "../../redux/actions/productActions";
 import * as cartActions from "../../redux/actions/cartActions";
-import alertify from "alertifyjs"
+import alertify from "alertifyjs";
 
 class ProductList extends Component {
   componentDidMount() {
@@ -12,9 +12,9 @@ class ProductList extends Component {
   }
 
   addToCart = (product) => {
-    this.props.actions.addToCart({quantity:1,product})
-    alertify.success(product.productName + "sepete eklendi")
-  }
+    this.props.actions.addToCart({ quantity: 1, product });
+    alertify.success(product.productName + " sepete eklendi");
+  };
   render() {
     return (
       <div>
@@ -45,7 +45,12 @@ class ProductList extends Component {
                 <td>{product.quantityPerUnit}</td>
                 <td>{product.unitsInStock}</td>
                 <td>
-                  <Button color="success" onClick={()=>this.addToCart(product)}>ekle</Button>
+                  <Button
+                    color="success"
+                    onClick={() => this.addToCart(product)}
+                  >
+                    ekle
+                  </Button>
                 </td>
               </tr>
             ))}
